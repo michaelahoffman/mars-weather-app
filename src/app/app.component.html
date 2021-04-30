@@ -1,0 +1,106 @@
+<div class="container mx-auto">
+  <div class="shadow-lg bg-white rounded-lg mt-8">
+    <div class="flex">
+      <h1 class="text-4xl pt-8 flex-auto font-bold mb-8 pl-2">{{title}}</h1>
+      <form class="p-2">
+        <div class="flex">
+          <label for="search" class="flex-auto pt-3">Date From</label>
+          <input
+            type="text"
+            class="rounded shadow ml-2"
+            name="dateFrom"
+            id="dateFrom"
+            aria-label="Date From"
+            placeholder="mm/dd/yyyy"
+          />
+          <button
+            class="p-2 flex items-center justify-center rounded-md bg-red-400 text-white"
+            type="button"
+          >
+            <i class="fal fa-calendar"></i>
+          </button>
+          <label for="dateTo" class="flex-aut ml-2 pt-3">To</label>
+          <input
+          type="text"
+          class="rounded shadow ml-2"
+          name="dateTo"
+          id="dateTo"
+          aria-label="Date To"
+          placeholder="mm/dd/yyyy"
+        />
+        <button
+          class="p-2 flex items-center justify-center rounded-md bg-red-400 text-white"
+          type="button"
+        >
+          <i class="fal fa-calendar"></i>
+        </button>
+        </div>
+      </form>
+    </div>
+    <div class="flex">
+      <div class="flex-none w-1/4 relative min-h-1/2">
+        <img
+          src="../assets/sunset-on-mars.jpg"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover p-3"
+        />
+      </div>
+      <div class="flex-auto p-6" *ngIf="weather">
+        <div class="flex flex-wrap">
+          <p class="text-sm w-full mb-3 text-gray-500">Most Recent: {{weather.primarySolDate | date}}</p>
+          <h2 class="flex-auto"><i class="fa fa-clouds fa-5x"></i></h2>
+          <div class="text-lg font-semibold text-green-500">
+            <i class="fal fa-leaf"></i> {{weather.primarySolSeason | uppercase}}
+          </div>
+          <h1 class="text-8xl w-full">{{weather.primarySolHigh || 'No Data'}} <span *ngIf='weather.primarySolHigh'>° F</span></h1>
+          <h1 class="flex-auto text-xl font-semibold">Sol {{weather.primarySolNumber}}
+          </h1>
+          <h1 class="text-xl font-semibold"><i class="fal fa-wind"></i> 15 mph N </h1>
+          <div class="w-full flex-none text-sm font-medium text-gray-500 mt-2">
+            Elysium Planitia
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-lg w-full pl-6">Last 6 Days</h3>
+    <div class="grid grid-cols-6 gap-4">
+      <div class="border-1 p-6">
+        <i class="fal fa-sun"></i>
+        <p>High: 75°</p>
+        <p>Low: -133°</p>
+        <p class="text-sm text-gray-500 italic">mm/dd/yyyy</p>
+      </div>
+      <div class="border-1 p-6">
+        <i class="fal fa-sun"></i>
+        <p>High: 75°</p>
+        <p>Low: -133°</p>
+        <p class="text-sm text-gray-500 italic">mm/dd/yyyy</p>
+      </div>
+      <div class="border-1 p-6">
+        <i class="fal fa-sun"></i>
+        <p>High: 75°</p>
+        <p>Low: -133°</p>
+        <p class="text-sm text-gray-500 italic">mm/dd/yyyy</p>
+      </div>
+      <div class="border-1 p-6">
+        <i class="fal fa-sun"></i>
+        <p>High: 75°</p>
+        <p>Low: -133°</p>
+        <p class="text-sm text-gray-500 italic">mm/dd/yyyy</p>
+      </div>
+      <div class="border-1 p-6">
+        <i class="fal fa-sun"></i>
+        <p>High: 75°</p>
+        <p>Low: -133°</p>
+        <p class="text-sm text-gray-500 italic">mm/dd/yyyy</p>
+      </div>
+      <div class="border-1 p-6">
+        <i class="fal fa-sun"></i>
+        <p>High: 75°</p>
+        <p>Low: -133°</p>
+        <p class="text-sm text-gray-500 italic">mm/dd/yyyy</p>
+      </div>
+    </div>
+  </div>
+</div>
